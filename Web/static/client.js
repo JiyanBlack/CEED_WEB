@@ -522,18 +522,12 @@ function startRun() {
         mydom['from-date'].valueAsDate = new Date(2009, 2, 1);
         mydom['to-date'].valueAsDate = new Date(2009, 2, 1);
     }
-    mydom['submit']
-        .addEventListener('click', function (event) {
-            event.preventDefault();
-            cardId = mydom['card-id'].value;
-            ajax_get('user/' + cardId, function (xhttp) {
-                console.log(xhttp.responseText);
-            });
-        });
+
     mydom['reset'].addEventListener('click', function (event) {
-        event.preventDefault();
-        setDateDefault();
-        mydom['card-id'].value = "";
+        // event.preventDefault();
+        // setDateDefault();
+        // mydom['card-id'].value = "";
+        
     });
     setDateDefault();
 }
@@ -614,7 +608,7 @@ function initMap() {
 
     }
 
-    drawLineByEncoded("jrbbEwm{aUDNBAJEZCnC?T?TFx@NjAPbH@?rD?rC?xC?lBB?FBDNhD?~L?D??K", randomPickColor());
+    
     addMarker('97|233|182', '1S', -31.9672633, 115.8167616);
     renderSingleJson(sample, 1);
 
@@ -623,10 +617,10 @@ function initMap() {
         var min_legs;
         var origin_start;
         var origin_end;
-        var start_label;
-        var end_label;
+        var bus_number=[];
         var start_latlon;
         var end_latlon;
+        var target_line;
         //delete routes with two transit in legs
         for (var i = 0; i < routes.length; i++) {
             var cur_route = routes[i];
@@ -656,16 +650,50 @@ function initMap() {
         // the first one
         for (var i = 0; i < routes.length; i++) {
             cur_route = routes[i];
+            cur_steps=cur_route.legs.steps;            
             if (i == 0) {
-                start_address = cur_route.legs.['start_address'];
-                end_address = cur_route.legs.['end_address'];
-                start_latlon = cur_route.legs.['start_location'];
-                end_latlon = cur_route.legs.['end_location'];
+                start_address = cur_steps['start_address'];
+                end_address = cur_steps['end_address'];
+                start_latlon = cur_steps['start_location'];
+                end_latlon = cur_steps['end_location'];
+                bus_number.push(cur_steps['transit_details']['short_name']);
+                target_line=cur_steps.polyline.points;
             } else {
-                if (cur_route.legs['start_address'] == start_address && cur_route.legs.['end_address'] == end_address) {}
+                if (cur_steps['start_address'] == start_address && cur_steps['end_address'] == end_address) {
+                    bus_number.push(cur_steps['transit_details']['short_name']);
+                }
             }
         }
+        drawLineByEncoded(target_line, randomPickColor());
     }
+
+    mydom['submit']
+    .addEventListener('click', function (event) {
+        event.preventDefault();
+        cardId = mydom['card-id'].value;
+        ajax_get('user/' + cardId, function (xhttp) {
+            console.log(xhttp.responseText);
+                    // Create a <script> tag and set the USGS URL as the source.
+        var script = document.createElement('script');
+        // This example uses a local copy of the GeoJSON stored at
+        // http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp
+        script.src = 'https://developers.google.com/maps/documentation/javascript/examples/json/earthquake_GeoJSONP.js';
+        document.getElementsByTagName('head')[0].appendChild(script);
+        });
+    });
+}
+
+// Loop through the results array and place a marker for each
+// set of coordinates.
+window.eqfeed_callback = function(results) {
+for (var i = 0; i < results.features.length; i++) {
+    var coords = results.features[i].geometry.coordinates;
+    var latLng = new google.maps.LatLng(coords[1],coords[0]);
+    var marker = new google.maps.Marker({
+    position: latLng,
+    map: map
+    });
+}
 }
 
 startRun();
