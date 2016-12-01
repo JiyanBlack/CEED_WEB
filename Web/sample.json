@@ -1,0 +1,503 @@
+{
+    "geocoded_waypoints": [
+        {
+            "place_id": "ChIJhwce6tO6MioRVdEbZ2PXYUk",
+            "types": [
+                "bus_station",
+                "establishment",
+                "point_of_interest",
+                "transit_station"
+            ],
+            "geocoder_status": "OK"
+        },
+        {
+            "place_id": "ChIJu09PCCOwMioRwEYgzqFI22g",
+            "types": [
+                "bus_station",
+                "establishment",
+                "point_of_interest",
+                "transit_station"
+            ],
+            "geocoder_status": "OK"
+        }
+    ],
+    "status": "OK",
+    "routes": [
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": -31.9672633,
+                    "lng": 115.8167616
+                },
+                "southwest": {
+                    "lat": -31.9737911,
+                    "lng": 115.8134561
+                }
+            },
+            "copyrights": "Map data ©2016 Google",
+            "legs": {
+                "arrival_time": {
+                    "text": "11:57am",
+                    "time_zone": "Australia/Perth",
+                    "value": 1480391820
+                },
+                "departure_time": {
+                    "text": "11:53am",
+                    "time_zone": "Australia/Perth",
+                    "value": 1480391580
+                },
+                "distance": {
+                    "text": "1.0 km",
+                    "value": 1023
+                },
+                "duration": {
+                    "text": "4 mins",
+                    "value": 240
+                },
+                "end_address": "Hampden Rd After Karella St, Nedlands WA 6009",
+                "end_location": {
+                    "lat": -31.9737911,
+                    "lng": 115.8135194
+                },
+                "start_address": "Hospital Ave, Nedlands WA 6009, Australia",
+                "start_location": {
+                    "lat": -31.9672633,
+                    "lng": 115.8167616
+                },
+                "steps": {
+                    "distance": {
+                        "text": "1.0 km",
+                        "value": 1023
+                    },
+                    "duration": {
+                        "text": "4 mins",
+                        "value": 240
+                    },
+                    "end_location": {
+                        "lat": -31.9737911,
+                        "lng": 115.8135194
+                    },
+                    "html_instructions": "Bus towards Crawley",
+                    "polyline": {
+                        "points": "jrbbEwm{aUDNBAJEZCf@?fB?T?TF\\FZFjAPbH@?l@?dC?lB?d@?t@?L?tA?lBB?B@B@@BBB?D?@lA?p@?h@?nC?zC?nC?B?D??K"
+                    },
+                    "start_location": {
+                        "lat": -31.9672633,
+                        "lng": 115.8167616
+                    },
+                    "transit_details": {
+                        "arrival_stop": {
+                            "location": {
+                                "lat": -31.9737911,
+                                "lng": 115.8135194
+                            },
+                            "name": "Hampden Rd After Karella St"
+                        },
+                        "arrival_time": {
+                            "text": "11:57am",
+                            "time_zone": "Australia/Perth",
+                            "value": 1480391820
+                        },
+                        "departure_stop": {
+                            "location": {
+                                "lat": -31.9672633,
+                                "lng": 115.8167616
+                            },
+                            "name": "Hospital Av Qeii Medical Centre"
+                        },
+                        "departure_time": {
+                            "text": "11:53am",
+                            "time_zone": "Australia/Perth",
+                            "value": 1480391580
+                        },
+                        "headsign": "Crawley",
+                        "line": {
+                            "agencies": [
+                                {
+                                    "name": "Transperth",
+                                    "url": "http://www.transperth.wa.gov.au/"
+                                }
+                            ],
+                            "color": "#002f6c",
+                            "short_name": "97",
+                            "text_color": "#ffffff",
+                            "url": "http://www.transperth.wa.gov.au/timetables/details?Bus=97",
+                            "vehicle": {
+                                "icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png",
+                                "name": "Bus",
+                                "type": "BUS"
+                            }
+                        },
+                        "num_stops": 3
+                    },
+                    "travel_mode": "TRANSIT"
+                },
+                "traffic_speed_entry": [],
+                "via_waypoint": []
+            },
+            "overview_polyline": {
+                "points": "jrbbEwm{aUDNNGbAC|B?zCh@bH@?l@?rF?zA?bB?lBB?FBDF?F~B?tI?rC?D??K"
+            },
+            "summary": "",
+            "warnings": [],
+            "waypoint_order": []
+        },
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": -31.9672633,
+                    "lng": 115.8167616
+                },
+                "southwest": {
+                    "lat": -31.9737911,
+                    "lng": 115.8134561
+                }
+            },
+            "copyrights": "Map data ©2016 Google",
+            "legs": {
+                "arrival_time": {
+                    "text": "11:58am",
+                    "time_zone": "Australia/Perth",
+                    "value": 1480391880
+                },
+                "departure_time": {
+                    "text": "11:55am",
+                    "time_zone": "Australia/Perth",
+                    "value": 1480391700
+                },
+                "distance": {
+                    "text": "1.0 km",
+                    "value": 1023
+                },
+                "duration": {
+                    "text": "3 mins",
+                    "value": 180
+                },
+                "end_address": "Hampden Rd After Karella St, Nedlands WA 6009",
+                "end_location": {
+                    "lat": -31.9737911,
+                    "lng": 115.8135194
+                },
+                "start_address": "Hospital Ave, Nedlands WA 6009, Australia",
+                "start_location": {
+                    "lat": -31.9672633,
+                    "lng": 115.8167616
+                },
+                "steps": {
+                    "distance": {
+                        "text": "1.0 km",
+                        "value": 1023
+                    },
+                    "duration": {
+                        "text": "3 mins",
+                        "value": 180
+                    },
+                    "end_location": {
+                        "lat": -31.9737911,
+                        "lng": 115.8135194
+                    },
+                    "html_instructions": "Bus towards Fremantle Stn",
+                    "polyline": {
+                        "points": "jrbbEwm{aUDNBAJEZCf@?fB?T?TF\\FZFjAPbH@?l@?dC?lB?d@?t@?L?tA?lBB?B@B@@BBB?D?@lA?p@?h@?nC?zC?nC?B?D??K"
+                    },
+                    "start_location": {
+                        "lat": -31.9672633,
+                        "lng": 115.8167616
+                    },
+                    "transit_details": {
+                        "arrival_stop": {
+                            "location": {
+                                "lat": -31.9737911,
+                                "lng": 115.8135194
+                            },
+                            "name": "Hampden Rd After Karella St"
+                        },
+                        "arrival_time": {
+                            "text": "11:58am",
+                            "time_zone": "Australia/Perth",
+                            "value": 1480391880
+                        },
+                        "departure_stop": {
+                            "location": {
+                                "lat": -31.9672633,
+                                "lng": 115.8167616
+                            },
+                            "name": "Hospital Av Qeii Medical Centre"
+                        },
+                        "departure_time": {
+                            "text": "11:55am",
+                            "time_zone": "Australia/Perth",
+                            "value": 1480391700
+                        },
+                        "headsign": "Fremantle Stn",
+                        "line": {
+                            "agencies": [
+                                {
+                                    "name": "Transperth",
+                                    "url": "http://www.transperth.wa.gov.au/"
+                                }
+                            ],
+                            "color": "#002f6c",
+                            "short_name": "103",
+                            "text_color": "#ffffff",
+                            "url": "http://www.transperth.wa.gov.au/timetables/details?Bus=103",
+                            "vehicle": {
+                                "icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png",
+                                "name": "Bus",
+                                "type": "BUS"
+                            }
+                        },
+                        "num_stops": 3
+                    },
+                    "travel_mode": "TRANSIT"
+                },
+                "traffic_speed_entry": [],
+                "via_waypoint": []
+            },
+            "overview_polyline": {
+                "points": "jrbbEwm{aUDNNGbAC|B?zCh@bH@?l@?rF?zA?bB?lBB?FBDF?F~B?tI?rC?D??K"
+            },
+            "summary": "",
+            "warnings": [],
+            "waypoint_order": []
+        },
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": -31.9672633,
+                    "lng": 115.8167616
+                },
+                "southwest": {
+                    "lat": -31.9737911,
+                    "lng": 115.8134561
+                }
+            },
+            "copyrights": "Map data ©2016 Google",
+            "legs": {
+                "arrival_time": {
+                    "text": "11:59am",
+                    "time_zone": "Australia/Perth",
+                    "value": 1480391940
+                },
+                "departure_time": {
+                    "text": "11:56am",
+                    "time_zone": "Australia/Perth",
+                    "value": 1480391760
+                },
+                "distance": {
+                    "text": "1.0 km",
+                    "value": 1023
+                },
+                "duration": {
+                    "text": "3 mins",
+                    "value": 180
+                },
+                "end_address": "Hampden Rd After Karella St, Nedlands WA 6009",
+                "end_location": {
+                    "lat": -31.9737911,
+                    "lng": 115.8135194
+                },
+                "start_address": "Hospital Ave, Nedlands WA 6009, Australia",
+                "start_location": {
+                    "lat": -31.9672633,
+                    "lng": 115.8167616
+                },
+                "steps": {
+                    "distance": {
+                        "text": "1.0 km",
+                        "value": 1023
+                    },
+                    "duration": {
+                        "text": "3 mins",
+                        "value": 180
+                    },
+                    "end_location": {
+                        "lat": -31.9737911,
+                        "lng": 115.8135194
+                    },
+                    "html_instructions": "Bus towards Morley Bus Stn",
+                    "polyline": {
+                        "points": "jrbbEwm{aUDNBAJEZCf@?fB?T?TF\\FZFjAPbH@?l@?dC?lB?d@?t@?L?tA?lBB?B@B@@BBB?D?@lA?p@?h@?nC?zC?nC?B?D??K"
+                    },
+                    "start_location": {
+                        "lat": -31.9672633,
+                        "lng": 115.8167616
+                    },
+                    "transit_details": {
+                        "arrival_stop": {
+                            "location": {
+                                "lat": -31.9737911,
+                                "lng": 115.8135194
+                            },
+                            "name": "Hampden Rd After Karella St"
+                        },
+                        "arrival_time": {
+                            "text": "11:59am",
+                            "time_zone": "Australia/Perth",
+                            "value": 1480391940
+                        },
+                        "departure_stop": {
+                            "location": {
+                                "lat": -31.9672633,
+                                "lng": 115.8167616
+                            },
+                            "name": "Hospital Av Qeii Medical Centre"
+                        },
+                        "departure_time": {
+                            "text": "11:56am",
+                            "time_zone": "Australia/Perth",
+                            "value": 1480391760
+                        },
+                        "headsign": "Morley Bus Stn",
+                        "line": {
+                            "agencies": [
+                                {
+                                    "name": "Transperth",
+                                    "url": "http://www.transperth.wa.gov.au/"
+                                }
+                            ],
+                            "color": "#009639",
+                            "short_name": "950",
+                            "text_color": "#ffffff",
+                            "url": "http://www.transperth.wa.gov.au/timetables/details?Bus=950",
+                            "vehicle": {
+                                "icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png",
+                                "name": "Bus",
+                                "type": "BUS"
+                            }
+                        },
+                        "num_stops": 3
+                    },
+                    "travel_mode": "TRANSIT"
+                },
+                "traffic_speed_entry": [],
+                "via_waypoint": []
+            },
+            "overview_polyline": {
+                "points": "jrbbEwm{aUDNBAJEZCnC?T?TFx@NjAPbH@?rD?rC?xC?lBB?FBDNhD?~L?D??K"
+            },
+            "summary": "",
+            "warnings": [],
+            "waypoint_order": []
+        },
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": -31.9672633,
+                    "lng": 115.8167616
+                },
+                "southwest": {
+                    "lat": -31.9737911,
+                    "lng": 115.8134561
+                }
+            },
+            "copyrights": "Map data ©2016 Google",
+            "legs": {
+                "arrival_time": {
+                    "text": "12:06pm",
+                    "time_zone": "Australia/Perth",
+                    "value": 1480392360
+                },
+                "departure_time": {
+                    "text": "12:03pm",
+                    "time_zone": "Australia/Perth",
+                    "value": 1480392180
+                },
+                "distance": {
+                    "text": "1.0 km",
+                    "value": 1023
+                },
+                "duration": {
+                    "text": "3 mins",
+                    "value": 180
+                },
+                "end_address": "Hampden Rd After Karella St, Nedlands WA 6009",
+                "end_location": {
+                    "lat": -31.9737911,
+                    "lng": 115.8135194
+                },
+                "start_address": "Hospital Ave, Nedlands WA 6009, Australia",
+                "start_location": {
+                    "lat": -31.9672633,
+                    "lng": 115.8167616
+                },
+                "steps": {
+                    "distance": {
+                        "text": "1.0 km",
+                        "value": 1023
+                    },
+                    "duration": {
+                        "text": "3 mins",
+                        "value": 180
+                    },
+                    "end_location": {
+                        "lat": -31.9737911,
+                        "lng": 115.8135194
+                    },
+                    "html_instructions": "Bus towards Morley Bus Stn",
+                    "polyline": {
+                        "points": "jrbbEwm{aUDNBAJEZCf@?fB?T?TF\\FZFjAPbH@?l@?dC?lB?d@?t@?L?tA?lBB?B@B@@BBB?D?@lA?p@?h@?nC?zC?nC?B?D??K"
+                    },
+                    "start_location": {
+                        "lat": -31.9672633,
+                        "lng": 115.8167616
+                    },
+                    "transit_details": {
+                        "arrival_stop": {
+                            "location": {
+                                "lat": -31.9737911,
+                                "lng": 115.8135194
+                            },
+                            "name": "Hampden Rd After Karella St"
+                        },
+                        "arrival_time": {
+                            "text": "12:06pm",
+                            "time_zone": "Australia/Perth",
+                            "value": 1480392360
+                        },
+                        "departure_stop": {
+                            "location": {
+                                "lat": -31.9672633,
+                                "lng": 115.8167616
+                            },
+                            "name": "Hospital Av Qeii Medical Centre"
+                        },
+                        "departure_time": {
+                            "text": "12:03pm",
+                            "time_zone": "Australia/Perth",
+                            "value": 1480392180
+                        },
+                        "headsign": "Morley Bus Stn",
+                        "line": {
+                            "agencies": [
+                                {
+                                    "name": "Transperth",
+                                    "url": "http://www.transperth.wa.gov.au/"
+                                }
+                            ],
+                            "color": "#009639",
+                            "short_name": "950",
+                            "text_color": "#ffffff",
+                            "url": "http://www.transperth.wa.gov.au/timetables/details?Bus=950",
+                            "vehicle": {
+                                "icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png",
+                                "name": "Bus",
+                                "type": "BUS"
+                            }
+                        },
+                        "num_stops": 3
+                    },
+                    "travel_mode": "TRANSIT"
+                },
+                "traffic_speed_entry": [],
+                "via_waypoint": []
+            },
+            "overview_polyline": {
+                "points": "jrbbEwm{aUDNBAJEZCnC?T?TFx@NjAPbH@?rD?rC?xC?lBB?FBDNhD?~L?D??K"
+            },
+            "summary": "",
+            "warnings": [],
+            "waypoint_order": []
+        }
+    ]
+}

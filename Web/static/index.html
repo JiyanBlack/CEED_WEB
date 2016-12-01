@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UWA CEED Visualization</title>
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="assets/css/pure.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/index.css">
+</head>
+
+<body>
+  <header>
+    <h1>UWA CEED Project</h1>
+    <h2>A Data Visualization Website</h2>
+  </header>
+
+  <div id="map"></div>
+
+  <form>
+    <div>
+      <label>
+      Card ID: 
+      <input type="text" name="card-id" id="card-id" required>
+    </label>
+    </div>
+    <div>
+      <label>
+      From:
+      <input type="date" name="from-date" id="from-date" required>
+    </label>
+      <span>&nbsp;&nbsp;&nbsp;<span>
+    <label>
+      To:
+      <input type="date" name="to-date" id="to-date" required>
+    </label>
+    </div>
+    <div>
+      <button id="submit" class="pure-button pure-button-primary">Submit</button>
+      <span>&nbsp;&nbsp;&nbsp;<span>
+      <button id="reset" class="pure-button button-warning">Reset</button>
+    </div>
+    <div id="sample-json"></div>
+  </form>
+
+  <script src="client.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMwaHBaOiPQlKZgyKhuuuBz2LTXgkZs5o&libraries=geometry&callback=initMap" async
+    defer></script>
+</body>
+
+</html>
