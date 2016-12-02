@@ -706,9 +706,7 @@ function renderSingleJson(ajson, counter) {
         drawLineByEncoded(target_line, randomPickColor());
         console.log(bus_number);
         for(var i=0; i<bus_number.length;i++){
-            for(var j=0;j<=i;j++){
-                
-            }
+            
         }
         var start_label='<div>'+start_address+'</div><div>'+bus_number.join('|')+'</div>'+'<div>'+'Latitude: '+start_latlon.lat+', Longitude: '+start_latlon.lng+'</div>';
         var end_label='<div>'+end_address+'</div><div>'+bus_number.join('|')+'</div>'+'<div>'+'Latitude: '+end_latlon.lat+', Longitude: '+end_latlon.lng+'</div>';
