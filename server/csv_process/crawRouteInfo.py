@@ -5,12 +5,16 @@ import urllib
 from datetime import datetime
 
 
-def get_placeid(row):
-    # find place id or return None
-    if pandas.isnull(row['status']) or row['status'] == 'ZERO_RESULTS':
-        return None
-    json_obj = json.loads(row['placeid_json'])
-    return json_obj['results'][0]['place_id']
+# def get_placeid(row):
+#     # find place id or return None
+#     if pandas.isnull(row['status']) or row['status'] == 'ZERO_RESULTS':
+#         return None
+#     json_obj = json.loads(row['placeid_json'])
+#     return json_obj['results'][0]['place_id']
+
+url_origin = 'https://maps.googleapis.com/maps/api/directions/json?'
+stops_df = pandas.read_csv('../csv/stops_latlon_placeid.csv')
+stops_df = stops_df.set_index('STOPNUMBER')
 
 
 def get_lat_lon(row):
@@ -29,21 +33,63 @@ def encode_coord(info):
         return 'place_id:' + info
 
 
-def getRouteJson(on, off, key):
-    url_origin = 'https://maps.googleapis.com/maps/api/directions/json?'
-    stops_df = pandas.read_csv('./stops_latlon_placeid.csv')
-    combinations_df = pandas.read_csv('./routeCombinations.csv')
-    stops_df = stops_df.set_index('STOPNUMBER')
+def process_json(result):
+    # {
+    #      "departure_stop":
+    #      {
+    #          "name": "Elizabeth Quay",
+    #          "location": {"lat": -32, "lng": 115}
+    #      },
+    #       "arrival_stop":...
+    #      }
+    #      "routes":
+    #       [{"shrot_name": "950",
+    #        "polyline": "sadsvwea","type":"BUS"},....]
+    # }
+    routes = result["routes"]
+    possible_routes = []
+    possbile_route_found = False
+    departure_stop = "NOT_FOUND"
+    arrival_stop = "NOT_FOUND"
+    for i in range(0, len(routes)):
+        cur_route = routes[i]
+        cur_route_transite_num = 0
+        for leg in cur_route['legs']:
+            for step in leg['steps']:
+                if step['travel_mode'] == 'TRANSIT':
+                    transit_step = step
+                    cur_route_transite_num += 1
+        if cur_route_transite_num == 1:
+            if not possbile_route_found:
+                departure_stop = transit_step[
+                    'transit_details']['departure_stop']
+                arrival_stop = transit_step['transit_details']['arrival_stop']
+            if departure_stop == transit_step['transit_details']['departure_stop'] and arrival_stop == transit_step['transit_details']['arrival_stop']:
+                transit_type = transit_step['transit_details'][
+                    'line']['vehicle']['type']
+                if transit_type == "BUS":
+                    cur_line = transit_step['transit_details']['line']
+                    potential_route = {"name": cur_line['short_name'] if 'short_name' in cur_line else cur_line['name'],
+                                       "polyline": transit_step['polyline']
+                                       }
+                    possible_routes.append(potential_route)
+    if len(possible_routes) == 0:
+        return "NO_ROUTE", {}
+    else:
+        return "OK", {"departure_stop": departure_stop,
+                      "arrival_stop": arrival_stop, "routes": possible_routes}
+
+
+def get_json(on, off, key):
+    global stops_df, url_origin, combinations_df
+
     # get on/off row
     on_row = stops_df.loc[on]
     off_row = stops_df.loc[off]
-    on_info = get_placeid(on_row) if get_placeid(
-        on_row) else get_lat_lon(on_row)
-    off_info = get_placeid(off_row) if get_placeid(
-        off_row) else get_lat_lon(off_row)
-    print(on_info, off_info)
+    on_info = get_lat_lon(on_row)
+    off_info = get_lat_lon(off_row)
     result = str(on_info) + ', ' + str(off_info)
-    status = 'Place Id Error!'
+    status = 'PLACE_INFO_ERROR'
     if on_info and off_info:
         parameters = {
             'origin': encode_coord(on_info),
@@ -58,42 +104,46 @@ def getRouteJson(on, off, key):
         url = url_origin + urllib.parse.urlencode(parameters)
         try:
             with urllib.request.urlopen(url) as remote:
-                result = remote.read().decode('utf-8')
-                result_obj = json.loads(result)
-                status = result_obj['status']
-                result = json.dumps(result_obj, separators=(',', ':'))
+                result = json.loads(remote.read().decode('utf-8'))
+                status = result['status']
         except Exception as e:
-            status = 'Server Error!'
+            status = 'SERVER_ERROR'
             result = str(e)
     return result, status
 
-while True:
-    try:
-        counter = 0
-        df = pandas.read_csv('./routes.csv')
+if __name__ == "__main__":
+    counter = 0
+    df = pandas.read_csv('./routes.csv')
 
-        keys = pick_key()
-        key = next(keys)
+    keys = pick_key()
+    key = next(keys)
 
-        for index, row in df.iterrows():
-            if pandas.isnull(row['status']) or row['status'] == 'Server Error!':
-                on, off = row['On'], row['Off']
-                result, status = getRouteJson(on, off, key)
-                print("%s for %d to %d, %d/%d" %
-                      (status, on, off, counter, 66742))
-                while status == 'REQUEST_DENIED' or status == "OVER_QUERY_LIMIT":
+    first_time = "STATUS" not in df.columns
+    for index, row in df.iterrows():
+        if first_time or pandas.isnull(row['STATUS']) or (row['STATUS'] == 'SERVER_ERROR'):
+            on, off = row['On'], row['Off']
+            status = "UNINITIALIZED"  # status is uninitialized at first
+            while status == 'REQUEST_DENIED' or status == "OVER_QUERY_LIMIT" or status == "UNINITIALIZED":
+                if status == 'REQUEST_DENIED' or status == "OVER_QUERY_LIMIT":
                     key = next(keys)
-                    result, status = getRouteJson(on, off, key)
-                df.ix[index, 'status'] = status
-                df.ix[index, 'routes'] = result
-                if counter % 100 == 99:
-                    df.to_csv('./routes.csv', index=False)
-                    print("===========> Saved at %d/%d <==========" %
-                          (counter, 66742))
-            counter += 1
-        df.to_csv('./routes.csv', index=False)
-        print("All Done!")
-    except Exception as e:
-        current_time = str(datetime.now().fromtimestamp)
-        with open('Error' + current_time, 'w') as f:
-            f.write(str(e))
+                # update result and status
+                result, status = get_json(on, off, key)
+            with open('./1.json', 'w') as f:
+                json.dump(result, f, indent=2)
+            if status == "OK":
+                status, processed_result = process_json(result)
+            df.ix[index, 'STATUS'] = status
+            # save processed json string
+            if status == "OK":
+                minified_result_string = json.dumps(
+                    processed_result, separators=(',', ':'))
+                df.ix[index, 'ROUTES'] = minified_result_string
+            print("%s for %d to %d, %d/%d" %
+                  (status, on, off, counter, 66742))
+            if counter % 100 == 99:
+                df.to_csv('./routes.csv', index=False)
+                print("===========> Saved at %d/%d <==========" %
+                      (counter, 66742))
+        counter += 1
+    df.to_csv('./routes.csv', index=False)
+    print("All Done!")

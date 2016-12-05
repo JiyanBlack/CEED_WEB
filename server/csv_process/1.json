@@ -1,0 +1,929 @@
+{
+  "geocoded_waypoints": [
+    {
+      "place_id": "ChIJ-SF3Mii7MioRhphP9tlw6-0",
+      "types": [
+        "street_address"
+      ],
+      "geocoder_status": "OK"
+    },
+    {
+      "place_id": "ChIJwzfi42u7MioRVAV1kS8Q8kg",
+      "types": [
+        "street_address"
+      ],
+      "geocoder_status": "OK"
+    }
+  ],
+  "routes": [
+    {
+      "legs": [
+        {
+          "duration": {
+            "value": 1202,
+            "text": "20 mins"
+          },
+          "start_address": "38A St Georges Terrace, Perth WA 6000, Australia",
+          "traffic_speed_entry": [],
+          "distance": {
+            "value": 4724,
+            "text": "4.7 km"
+          },
+          "via_waypoint": [],
+          "end_address": "46 Canning Hwy, South Perth WA 6151, Australia",
+          "start_location": {
+            "lat": -31.95602239999999,
+            "lng": 115.8606415
+          },
+          "arrival_time": {
+            "value": 1480928460,
+            "text": "5:01pm",
+            "time_zone": "Australia/Perth"
+          },
+          "end_location": {
+            "lat": -31.9770635,
+            "lng": 115.8804348
+          },
+          "departure_time": {
+            "value": 1480927258,
+            "text": "4:40pm",
+            "time_zone": "Australia/Perth"
+          },
+          "steps": [
+            {
+              "duration": {
+                "value": 132,
+                "text": "2 mins"
+              },
+              "start_location": {
+                "lat": -31.95602239999999,
+                "lng": 115.8606415
+              },
+              "travel_mode": "WALKING",
+              "end_location": {
+                "lat": -31.956555,
+                "lng": 115.8624967
+              },
+              "polyline": {
+                "points": "bl`bE_`dbU`AkEBKn@uCIE"
+              },
+              "html_instructions": "Walk to St Georges Tce Stand C (Before Irwin St)",
+              "distance": {
+                "value": 185,
+                "text": "0.2 km"
+              },
+              "steps": [
+                {
+                  "duration": {
+                    "value": 132,
+                    "text": "2 mins"
+                  },
+                  "start_location": {
+                    "lat": -31.95602239999999,
+                    "lng": 115.8606415
+                  },
+                  "travel_mode": "WALKING",
+                  "end_location": {
+                    "lat": -31.956555,
+                    "lng": 115.8624967
+                  },
+                  "polyline": {
+                    "points": "bl`bE_`dbU`AkEBKn@uCIE"
+                  },
+                  "html_instructions": "Head <b>east</b> on <b>St Georges Terrace</b> toward <b>Pier St</b><div style=\"font-size:0.9em\">Destination will be on the left</div>",
+                  "distance": {
+                    "value": 185,
+                    "text": "0.2 km"
+                  }
+                }
+              ]
+            },
+            {
+              "duration": {
+                "value": 1080,
+                "text": "18 mins"
+              },
+              "start_location": {
+                "lat": -31.956555,
+                "lng": 115.8624967
+              },
+              "travel_mode": "TRANSIT",
+              "end_location": {
+                "lat": -31.9770635,
+                "lng": 115.8804348
+              },
+              "polyline": {
+                "points": "no`bEskdbURHb@mB^aBf@{BDS^wA\\oAZw@l@}B`AeEp@yCZqAdAwEPq@`BmHTcAhCsL\\{Ah@cCv@sDHc@FYBQTeAJk@Nq@N{@Py@^}Ad@mAHU@AJUHYLc@AK@Q@]J[JWJWLSNQNOTQdAcAb@k@LONWHMt@kADGdF}JvAwCp@sAdAyB|EkJvA}CTg@p@mBPm@Lc@Vq@FOjAmCPc@@G@A@I?M?IEI][QKQE]M]IK?I?K@MDOFIJQVKXCNALBVBNDLFLFLVX^d@d@\\PPNNJL^j@j@z@d@t@P^v@vA`@n@LN`@h@p@r@@@`CxBBFDHJHxC`CzBfBp@h@hItGLH?@\\ThA|@h@`@BBdAx@|C`CbAt@RPpCvBDI"
+              },
+              "html_instructions": "Bus towards Applecross",
+              "distance": {
+                "value": 4539,
+                "text": "4.5 km"
+              },
+              "transit_details": {
+                "num_stops": 9,
+                "arrival_stop": {
+                  "name": "Canning Hwy After Way Rd",
+                  "location": {
+                    "lat": -31.9770635,
+                    "lng": 115.8804348
+                  }
+                },
+                "line": {
+                  "agencies": [
+                    {
+                      "name": "Transperth",
+                      "url": "http://www.transperth.wa.gov.au/"
+                    }
+                  ],
+                  "url": "http://www.transperth.wa.gov.au/timetables/details?Bus=910",
+                  "vehicle": {
+                    "name": "Bus",
+                    "icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png",
+                    "type": "BUS"
+                  },
+                  "text_color": "#ffffff",
+                  "color": "#002f6c",
+                  "short_name": "910"
+                },
+                "headsign": "Applecross",
+                "arrival_time": {
+                  "value": 1480928460,
+                  "text": "5:01pm",
+                  "time_zone": "Australia/Perth"
+                },
+                "departure_stop": {
+                  "name": "St Georges Tce Stand C (Before Irwin St)",
+                  "location": {
+                    "lat": -31.956555,
+                    "lng": 115.8624967
+                  }
+                },
+                "departure_time": {
+                  "value": 1480927380,
+                  "text": "4:43pm",
+                  "time_zone": "Australia/Perth"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "waypoint_order": [],
+      "overview_polyline": {
+        "points": "bl`bE_`dbUdAwEn@uCIERHbAoElAgF\\oAZw@nBcIrCcMhCcLpEsSlAcG`A_Fp@wCn@cBVq@Lc@AKBo@Vs@Xk@^a@zAuAjAaBz@sA|HuOvBmE|EkJvA}CfAuC^qA^aA|AqDDS?Wc@e@c@Q{@WU?YFYR]p@E\\Ff@LZ^f@^d@d@\\`@`@|BjDhAvBn@~@rA|AbCzBHPdDjCvNfLhF~DfK`IDI"
+      },
+      "warnings": [
+        "Walking directions are in beta.    Use caution \u2013 This route may be missing sidewalks or pedestrian paths."
+      ],
+      "copyrights": "Map data \u00a92016 Google",
+      "bounds": {
+        "southwest": {
+          "lat": -31.9770635,
+          "lng": 115.8606415
+        },
+        "northeast": {
+          "lat": -31.95602239999999,
+          "lng": 115.8903194
+        }
+      },
+      "summary": ""
+    },
+    {
+      "legs": [
+        {
+          "duration": {
+            "value": 1202,
+            "text": "20 mins"
+          },
+          "start_address": "38A St Georges Terrace, Perth WA 6000, Australia",
+          "traffic_speed_entry": [],
+          "distance": {
+            "value": 4724,
+            "text": "4.7 km"
+          },
+          "via_waypoint": [],
+          "end_address": "46 Canning Hwy, South Perth WA 6151, Australia",
+          "start_location": {
+            "lat": -31.95602239999999,
+            "lng": 115.8606415
+          },
+          "arrival_time": {
+            "value": 1480928880,
+            "text": "5:08pm",
+            "time_zone": "Australia/Perth"
+          },
+          "end_location": {
+            "lat": -31.9770635,
+            "lng": 115.8804348
+          },
+          "departure_time": {
+            "value": 1480927678,
+            "text": "4:47pm",
+            "time_zone": "Australia/Perth"
+          },
+          "steps": [
+            {
+              "duration": {
+                "value": 132,
+                "text": "2 mins"
+              },
+              "start_location": {
+                "lat": -31.95602239999999,
+                "lng": 115.8606415
+              },
+              "travel_mode": "WALKING",
+              "end_location": {
+                "lat": -31.956555,
+                "lng": 115.8624967
+              },
+              "polyline": {
+                "points": "bl`bE_`dbU`AkEBKn@uCIE"
+              },
+              "html_instructions": "Walk to St Georges Tce Stand C (Before Irwin St)",
+              "distance": {
+                "value": 185,
+                "text": "0.2 km"
+              },
+              "steps": [
+                {
+                  "duration": {
+                    "value": 132,
+                    "text": "2 mins"
+                  },
+                  "start_location": {
+                    "lat": -31.95602239999999,
+                    "lng": 115.8606415
+                  },
+                  "travel_mode": "WALKING",
+                  "end_location": {
+                    "lat": -31.956555,
+                    "lng": 115.8624967
+                  },
+                  "polyline": {
+                    "points": "bl`bE_`dbU`AkEBKn@uCIE"
+                  },
+                  "html_instructions": "Head <b>east</b> on <b>St Georges Terrace</b> toward <b>Pier St</b><div style=\"font-size:0.9em\">Destination will be on the left</div>",
+                  "distance": {
+                    "value": 185,
+                    "text": "0.2 km"
+                  }
+                }
+              ]
+            },
+            {
+              "duration": {
+                "value": 1080,
+                "text": "18 mins"
+              },
+              "start_location": {
+                "lat": -31.956555,
+                "lng": 115.8624967
+              },
+              "travel_mode": "TRANSIT",
+              "end_location": {
+                "lat": -31.9770635,
+                "lng": 115.8804348
+              },
+              "polyline": {
+                "points": "no`bEskdbURHb@mB^aBf@{BDS^wA\\oAZw@l@}B`AeEp@yCZqAdAwEPq@`BmHTcAhCsL\\{Ah@cCv@sDHc@FYBQTeAJk@Nq@N{@Py@^}Ad@mAHU@CJSHYLc@AK@Q@]J[JWJWLSNQNOTQdAcAb@k@LONWHMt@kADEdF_KvAwCp@sAdAyB|EkJvA}CRg@r@mBPm@Lc@Vq@FOjAmCPc@@G@A@I?M?IEI][QKQE]M]IK?I?K@MDOFIJQVKXCNALBVBNDLFLFLVX^d@d@\\PPNNJL^j@j@z@d@t@P^v@vA`@n@LN`@h@p@r@@@`CxBBFDHJHxC`CzBfBp@h@hItGLH?@\\ThA|@h@`@BBdAx@|C`CbAt@RPpCvBDI"
+              },
+              "html_instructions": "Bus towards Fremantle Stn",
+              "distance": {
+                "value": 4539,
+                "text": "4.5 km"
+              },
+              "transit_details": {
+                "num_stops": 9,
+                "arrival_stop": {
+                  "name": "Canning Hwy After Way Rd",
+                  "location": {
+                    "lat": -31.9770635,
+                    "lng": 115.8804348
+                  }
+                },
+                "line": {
+                  "agencies": [
+                    {
+                      "name": "Transperth",
+                      "url": "http://www.transperth.wa.gov.au/"
+                    }
+                  ],
+                  "url": "http://www.transperth.wa.gov.au/timetables/details?Bus=910",
+                  "vehicle": {
+                    "name": "Bus",
+                    "icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png",
+                    "type": "BUS"
+                  },
+                  "text_color": "#ffffff",
+                  "color": "#002f6c",
+                  "short_name": "910"
+                },
+                "headsign": "Fremantle Stn",
+                "arrival_time": {
+                  "value": 1480928880,
+                  "text": "5:08pm",
+                  "time_zone": "Australia/Perth"
+                },
+                "departure_stop": {
+                  "name": "St Georges Tce Stand C (Before Irwin St)",
+                  "location": {
+                    "lat": -31.956555,
+                    "lng": 115.8624967
+                  }
+                },
+                "departure_time": {
+                  "value": 1480927800,
+                  "text": "4:50pm",
+                  "time_zone": "Australia/Perth"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "waypoint_order": [],
+      "overview_polyline": {
+        "points": "bl`bE_`dbUdAwEn@uCIERHbAoElAgF\\oAZw@nBcIrCcMhCcLpEsSlAcG`A_Fp@wCn@cBVq@Lc@AKBo@Vs@Xk@^a@zAuAjAaBz@qA|HwOvBmE|EkJvA}CfAuC^qA^aA|AqDDS?Wc@e@c@Q{@WU?YFYR]p@E\\Ff@LZ^f@^d@d@\\`@`@|BjDhAvBn@~@rA|AbCzBHPdDjCvNfLhF~DfK`IDI"
+      },
+      "warnings": [
+        "Walking directions are in beta.    Use caution \u2013 This route may be missing sidewalks or pedestrian paths."
+      ],
+      "copyrights": "Map data \u00a92016 Google",
+      "bounds": {
+        "southwest": {
+          "lat": -31.9770635,
+          "lng": 115.8606415
+        },
+        "northeast": {
+          "lat": -31.95602239999999,
+          "lng": 115.8903194
+        }
+      },
+      "summary": ""
+    },
+    {
+      "legs": [
+        {
+          "duration": {
+            "value": 1330,
+            "text": "22 mins"
+          },
+          "start_address": "38A St Georges Terrace, Perth WA 6000, Australia",
+          "traffic_speed_entry": [],
+          "distance": {
+            "value": 4901,
+            "text": "4.9 km"
+          },
+          "via_waypoint": [],
+          "end_address": "46 Canning Hwy, South Perth WA 6151, Australia",
+          "start_location": {
+            "lat": -31.95602239999999,
+            "lng": 115.8606415
+          },
+          "arrival_time": {
+            "value": 1480928768,
+            "text": "5:06pm",
+            "time_zone": "Australia/Perth"
+          },
+          "end_location": {
+            "lat": -31.9769935,
+            "lng": 115.8804269
+          },
+          "departure_time": {
+            "value": 1480927438,
+            "text": "4:43pm",
+            "time_zone": "Australia/Perth"
+          },
+          "steps": [
+            {
+              "duration": {
+                "value": 132,
+                "text": "2 mins"
+              },
+              "start_location": {
+                "lat": -31.95602239999999,
+                "lng": 115.8606415
+              },
+              "travel_mode": "WALKING",
+              "end_location": {
+                "lat": -31.956555,
+                "lng": 115.8624967
+              },
+              "polyline": {
+                "points": "bl`bE_`dbU`AkEBKn@uCIE"
+              },
+              "html_instructions": "Walk to St Georges Tce Stand C (Before Irwin St)",
+              "distance": {
+                "value": 185,
+                "text": "0.2 km"
+              },
+              "steps": [
+                {
+                  "duration": {
+                    "value": 132,
+                    "text": "2 mins"
+                  },
+                  "start_location": {
+                    "lat": -31.95602239999999,
+                    "lng": 115.8606415
+                  },
+                  "travel_mode": "WALKING",
+                  "end_location": {
+                    "lat": -31.956555,
+                    "lng": 115.8624967
+                  },
+                  "polyline": {
+                    "points": "bl`bE_`dbU`AkEBKn@uCIE"
+                  },
+                  "html_instructions": "Head <b>east</b> on <b>St Georges Terrace</b> toward <b>Pier St</b><div style=\"font-size:0.9em\">Destination will be on the left</div>",
+                  "distance": {
+                    "value": 185,
+                    "text": "0.2 km"
+                  }
+                }
+              ]
+            },
+            {
+              "duration": {
+                "value": 1020,
+                "text": "17 mins"
+              },
+              "start_location": {
+                "lat": -31.956555,
+                "lng": 115.8624967
+              },
+              "travel_mode": "TRANSIT",
+              "end_location": {
+                "lat": -31.97645039999999,
+                "lng": 115.8820582
+              },
+              "polyline": {
+                "points": "no`bEskdbURHb@mB^aBf@{BDS^wA\\oAZw@l@}B`AeEp@yCZqAdAwEPq@`BmHTcAhCsL\\{Ah@cCv@sDHc@FYBQTeAJk@Nq@N{@Py@^}Ad@mAHU@CJSHYLc@AK@Q@]J[JWJWLSNQNOTQdAcAb@k@LONWHMt@kADEdF_KvAwCp@sAdAyB|EkJvA}CRg@r@mBPm@Lc@Vq@FOjAmCPc@@G@A@I?M?IEI][QKQE]M]IK?I?K@MDOFIJQVKXCNALBVBNDLFLFLVX^d@d@\\PPNNJL^j@j@z@d@t@P^v@vA`@n@LN`@h@p@r@@@`CxBBFDHJHxC`CzBfBp@h@hItGLH?@\\ThA|@h@`@BBdAx@|C`C|BeCGI"
+              },
+              "html_instructions": "Bus towards Curtin University Bus Stn",
+              "distance": {
+                "value": 4474,
+                "text": "4.5 km"
+              },
+              "transit_details": {
+                "num_stops": 9,
+                "arrival_stop": {
+                  "name": "Lansdowne Rd After Canning Hwy",
+                  "location": {
+                    "lat": -31.97645039999999,
+                    "lng": 115.8820582
+                  }
+                },
+                "line": {
+                  "agencies": [
+                    {
+                      "name": "Transperth",
+                      "url": "http://www.transperth.wa.gov.au/"
+                    }
+                  ],
+                  "url": "http://www.transperth.wa.gov.au/timetables/details?Bus=70",
+                  "vehicle": {
+                    "name": "Bus",
+                    "icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png",
+                    "type": "BUS"
+                  },
+                  "text_color": "#000000",
+                  "color": "#ffab00",
+                  "short_name": "70"
+                },
+                "headsign": "Curtin University Bus Stn",
+                "arrival_time": {
+                  "value": 1480928580,
+                  "text": "5:03pm",
+                  "time_zone": "Australia/Perth"
+                },
+                "departure_stop": {
+                  "name": "St Georges Tce Stand C (Before Irwin St)",
+                  "location": {
+                    "lat": -31.956555,
+                    "lng": 115.8624967
+                  }
+                },
+                "departure_time": {
+                  "value": 1480927560,
+                  "text": "4:46pm",
+                  "time_zone": "Australia/Perth"
+                }
+              }
+            },
+            {
+              "duration": {
+                "value": 188,
+                "text": "3 mins"
+              },
+              "start_location": {
+                "lat": -31.97645039999999,
+                "lng": 115.8820582
+              },
+              "travel_mode": "WALKING",
+              "end_location": {
+                "lat": -31.9769935,
+                "lng": 115.8804269
+              },
+              "polyline": {
+                "points": "xkdbE{ehbUHLiBlBOR`@Zt@h@bCnB"
+              },
+              "html_instructions": "Walk to 46 Canning Hwy, South Perth WA 6151, Australia",
+              "distance": {
+                "value": 242,
+                "text": "0.2 km"
+              },
+              "steps": [
+                {
+                  "duration": {
+                    "value": 65,
+                    "text": "1 min"
+                  },
+                  "start_location": {
+                    "lat": -31.97645039999999,
+                    "lng": 115.8820582
+                  },
+                  "travel_mode": "WALKING",
+                  "end_location": {
+                    "lat": -31.9758851,
+                    "lng": 115.8813387
+                  },
+                  "polyline": {
+                    "points": "xkdbE{ehbUHLiBlBOR"
+                  },
+                  "html_instructions": "Head <b>northwest</b> on <b>Lansdowne Rd</b> toward <b>National Route 1</b>",
+                  "distance": {
+                    "value": 92,
+                    "text": "92 m"
+                  }
+                },
+                {
+                  "duration": {
+                    "value": 123,
+                    "text": "2 mins"
+                  },
+                  "start_location": {
+                    "lat": -31.9758851,
+                    "lng": 115.8813387
+                  },
+                  "travel_mode": "WALKING",
+                  "end_location": {
+                    "lat": -31.9769935,
+                    "lng": 115.8804269
+                  },
+                  "polyline": {
+                    "points": "hhdbEkahbU`@Zt@h@bCnB"
+                  },
+                  "maneuver": "turn-left",
+                  "distance": {
+                    "value": 150,
+                    "text": "0.2 km"
+                  },
+                  "html_instructions": "Turn <b>left</b> onto <b>National Route 1</b><div style=\"font-size:0.9em\">Destination will be on the left</div>"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "waypoint_order": [],
+      "overview_polyline": {
+        "points": "bl`bE_`dbUdAwEn@uCIERHbAoElAgF\\oAZw@nBcIrCcMhCcLpEsSlAcG`A_Fp@wCn@cBVq@Lc@AKBo@Vs@Xk@^a@zAuAjAaBz@qA|HwOvBmE|EkJvA}CfAuC^qA^aA|AqDDS?Wc@e@c@Q{@WU?YFYR]p@E\\Ff@LZ^f@^d@d@\\`@`@|BjDhAvBn@~@rA|AbCzBHPdDjCvNfLhF~D|C`C|BeCGIHLyB`CvAdAbCnB"
+      },
+      "warnings": [
+        "Walking directions are in beta.    Use caution \u2013 This route may be missing sidewalks or pedestrian paths."
+      ],
+      "copyrights": "Map data \u00a92016 Google",
+      "bounds": {
+        "southwest": {
+          "lat": -31.9769935,
+          "lng": 115.8606415
+        },
+        "northeast": {
+          "lat": -31.95602239999999,
+          "lng": 115.8903194
+        }
+      },
+      "summary": ""
+    },
+    {
+      "legs": [
+        {
+          "duration": {
+            "value": 1673,
+            "text": "28 mins"
+          },
+          "start_address": "38A St Georges Terrace, Perth WA 6000, Australia",
+          "traffic_speed_entry": [],
+          "distance": {
+            "value": 5118,
+            "text": "5.1 km"
+          },
+          "via_waypoint": [],
+          "end_address": "46 Canning Hwy, South Perth WA 6151, Australia",
+          "start_location": {
+            "lat": -31.95602239999999,
+            "lng": 115.8606415
+          },
+          "arrival_time": {
+            "value": 1480928811,
+            "text": "5:06pm",
+            "time_zone": "Australia/Perth"
+          },
+          "end_location": {
+            "lat": -31.9769935,
+            "lng": 115.8804269
+          },
+          "departure_time": {
+            "value": 1480927138,
+            "text": "4:38pm",
+            "time_zone": "Australia/Perth"
+          },
+          "steps": [
+            {
+              "duration": {
+                "value": 132,
+                "text": "2 mins"
+              },
+              "start_location": {
+                "lat": -31.95602239999999,
+                "lng": 115.8606415
+              },
+              "travel_mode": "WALKING",
+              "end_location": {
+                "lat": -31.956555,
+                "lng": 115.8624967
+              },
+              "polyline": {
+                "points": "bl`bE_`dbU`AkEBKn@uCIE"
+              },
+              "html_instructions": "Walk to St Georges Tce Stand C (Before Irwin St)",
+              "distance": {
+                "value": 185,
+                "text": "0.2 km"
+              },
+              "steps": [
+                {
+                  "duration": {
+                    "value": 132,
+                    "text": "2 mins"
+                  },
+                  "start_location": {
+                    "lat": -31.95602239999999,
+                    "lng": 115.8606415
+                  },
+                  "travel_mode": "WALKING",
+                  "end_location": {
+                    "lat": -31.956555,
+                    "lng": 115.8624967
+                  },
+                  "polyline": {
+                    "points": "bl`bE_`dbU`AkEBKn@uCIE"
+                  },
+                  "html_instructions": "Head <b>east</b> on <b>St Georges Terrace</b> toward <b>Pier St</b><div style=\"font-size:0.9em\">Destination will be on the left</div>",
+                  "distance": {
+                    "value": 185,
+                    "text": "0.2 km"
+                  }
+                }
+              ]
+            },
+            {
+              "duration": {
+                "value": 960,
+                "text": "16 mins"
+              },
+              "start_location": {
+                "lat": -31.956555,
+                "lng": 115.8624967
+              },
+              "travel_mode": "TRANSIT",
+              "end_location": {
+                "lat": -31.9757061,
+                "lng": 115.8861275
+              },
+              "polyline": {
+                "points": "no`bEskdbURHb@mB^aBf@{BDS^wA\\oAZw@l@}B`AeEp@yCZqAdAwEPq@`BmHTcAhCsL\\{Ah@cCv@sDHc@FYBQTeAJk@Nq@N{@Py@^}Ad@mAHU@CJSHYLc@AK@Q@]J[JWJWLSNQNOTQdAcAb@k@LONWHMt@kADEdF_KvAwCp@sAdAyB|EkJvA}CRg@r@mBPm@Lc@Vq@FOTi@t@cBPc@BI@I?M?IEIHU?ABIL_@|@kCTw@VFjBj@b@{@nA{CL[jFtGt@|@~C|DlB`C@AB?@?B?B?@@B@@@@@?@@@?@?B?@?BA@?@A@pBfCxCvD~D`FHK"
+              },
+              "html_instructions": "Bus towards Curtin University Bus Stn",
+              "distance": {
+                "value": 4152,
+                "text": "4.2 km"
+              },
+              "transit_details": {
+                "num_stops": 10,
+                "arrival_stop": {
+                  "name": "Geddes St Before Berwick St",
+                  "location": {
+                    "lat": -31.9757061,
+                    "lng": 115.8861275
+                  }
+                },
+                "line": {
+                  "agencies": [
+                    {
+                      "name": "Transperth",
+                      "url": "http://www.transperth.wa.gov.au/"
+                    }
+                  ],
+                  "url": "http://www.transperth.wa.gov.au/timetables/details?Bus=72",
+                  "vehicle": {
+                    "name": "Bus",
+                    "icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png",
+                    "type": "BUS"
+                  },
+                  "text_color": "#ffffff",
+                  "color": "#002f6c",
+                  "short_name": "72"
+                },
+                "headsign": "Curtin University Bus Stn",
+                "arrival_time": {
+                  "value": 1480928220,
+                  "text": "4:57pm",
+                  "time_zone": "Australia/Perth"
+                },
+                "departure_stop": {
+                  "name": "St Georges Tce Stand C (Before Irwin St)",
+                  "location": {
+                    "lat": -31.956555,
+                    "lng": 115.8624967
+                  }
+                },
+                "departure_time": {
+                  "value": 1480927260,
+                  "text": "4:41pm",
+                  "time_zone": "Australia/Perth"
+                }
+              }
+            },
+            {
+              "duration": {
+                "value": 590,
+                "text": "10 mins"
+              },
+              "start_location": {
+                "lat": -31.9757061,
+                "lng": 115.8861275
+              },
+              "travel_mode": "WALKING",
+              "end_location": {
+                "lat": -31.9769935,
+                "lng": 115.8804269
+              },
+              "polyline": {
+                "points": "dgdbEi_ibUIJvAhBiA|A`@f@bD`EfCjD_CxC}CdDOR`@Zt@h@bCnB"
+              },
+              "html_instructions": "Walk to 46 Canning Hwy, South Perth WA 6151, Australia",
+              "distance": {
+                "value": 781,
+                "text": "0.8 km"
+              },
+              "steps": [
+                {
+                  "duration": {
+                    "value": 50,
+                    "text": "1 min"
+                  },
+                  "start_location": {
+                    "lat": -31.9757061,
+                    "lng": 115.8861275
+                  },
+                  "travel_mode": "WALKING",
+                  "end_location": {
+                    "lat": -31.9761009,
+                    "lng": 115.8855404
+                  },
+                  "polyline": {
+                    "points": "dgdbEi_ibUIJvAhB"
+                  },
+                  "html_instructions": "Head <b>southwest</b> on <b>Geddes St</b> toward <b>Berwick St</b>",
+                  "distance": {
+                    "value": 70,
+                    "text": "70 m"
+                  }
+                },
+                {
+                  "duration": {
+                    "value": 45,
+                    "text": "1 min"
+                  },
+                  "start_location": {
+                    "lat": -31.9761009,
+                    "lng": 115.8855404
+                  },
+                  "travel_mode": "WALKING",
+                  "end_location": {
+                    "lat": -31.9757297,
+                    "lng": 115.8850748
+                  },
+                  "polyline": {
+                    "points": "ridbEs{hbUiA|A"
+                  },
+                  "maneuver": "turn-right",
+                  "distance": {
+                    "value": 60,
+                    "text": "60 m"
+                  },
+                  "html_instructions": "Turn <b>right</b> onto <b>Berwick St</b>"
+                },
+                {
+                  "duration": {
+                    "value": 207,
+                    "text": "3 mins"
+                  },
+                  "start_location": {
+                    "lat": -31.9757297,
+                    "lng": 115.8850748
+                  },
+                  "travel_mode": "WALKING",
+                  "end_location": {
+                    "lat": -31.9774037,
+                    "lng": 115.8830372
+                  },
+                  "polyline": {
+                    "points": "hgdbEuxhbU`@f@bD`EfCjD"
+                  },
+                  "maneuver": "turn-left",
+                  "distance": {
+                    "value": 268,
+                    "text": "0.3 km"
+                  },
+                  "html_instructions": "Turn <b>left</b> onto <b>Second Ave</b>"
+                },
+                {
+                  "duration": {
+                    "value": 165,
+                    "text": "3 mins"
+                  },
+                  "start_location": {
+                    "lat": -31.9774037,
+                    "lng": 115.8830372
+                  },
+                  "travel_mode": "WALKING",
+                  "end_location": {
+                    "lat": -31.9758851,
+                    "lng": 115.8813387
+                  },
+                  "polyline": {
+                    "points": "vqdbE_lhbU_CxC}CdDOR"
+                  },
+                  "maneuver": "turn-right",
+                  "distance": {
+                    "value": 233,
+                    "text": "0.2 km"
+                  },
+                  "html_instructions": "Turn <b>right</b> onto <b>Lansdowne Rd</b>"
+                },
+                {
+                  "duration": {
+                    "value": 123,
+                    "text": "2 mins"
+                  },
+                  "start_location": {
+                    "lat": -31.9758851,
+                    "lng": 115.8813387
+                  },
+                  "travel_mode": "WALKING",
+                  "end_location": {
+                    "lat": -31.9769935,
+                    "lng": 115.8804269
+                  },
+                  "polyline": {
+                    "points": "hhdbEkahbU`@Zt@h@bCnB"
+                  },
+                  "maneuver": "turn-left",
+                  "distance": {
+                    "value": 150,
+                    "text": "0.2 km"
+                  },
+                  "html_instructions": "Turn <b>left</b> onto <b>National Route 1</b><div style=\"font-size:0.9em\">Destination will be on the left</div>"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "waypoint_order": [],
+      "overview_polyline": {
+        "points": "bl`bE_`dbUdAwEn@uCIERHbAoElAgF\\oAZw@nBcIrCcMhCcLpEsSlAcG`A_Fp@wCn@cBVq@Lc@AKBo@Vs@Xk@^a@zAuAjAaBz@qA|HwOvBmE|EkJvA}CfAuC^qAt@kBfAgCDS?WEIHUBKjAkDTw@VFjBj@b@{@|AwDjFtGbI|JJAJDBFAJABpBfCxIxKHKIJvAhBiA|A`@f@bD`EfCjD_CxC}CdDOR`@ZxDxC"
+      },
+      "warnings": [
+        "Walking directions are in beta.    Use caution \u2013 This route may be missing sidewalks or pedestrian paths."
+      ],
+      "copyrights": "Map data \u00a92016 Google",
+      "bounds": {
+        "southwest": {
+          "lat": -31.9774037,
+          "lng": 115.8606415
+        },
+        "northeast": {
+          "lat": -31.95602239999999,
+          "lng": 115.8922422
+        }
+      },
+      "summary": ""
+    }
+  ],
+  "status": "OK"
+}
