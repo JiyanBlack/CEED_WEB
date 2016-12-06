@@ -43,7 +43,7 @@ def process_json(result):
     #       "arrival_stop":...
     #      }
     #      "routes":
-    #       [{"shrot_name": "950",
+    #       [{"name": "950",
     #        "polyline": "sadsvwea","type":"BUS"},....]
     # }
     routes = result["routes"]

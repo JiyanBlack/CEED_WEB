@@ -23,18 +23,6 @@ function startRun() {
     setDateDefault();
 }
 
-function ajax_get(url, callback) {
-    var xhttp;
-    xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            callback(this);
-        }
-    };
-    xhttp.open("GET", url, true);
-    xhttp.send();
-}
-
 function initMap() {
     // Create a map object and specify the DOM element for display.
 
@@ -52,22 +40,44 @@ function initMap() {
         .Map(document.getElementById('map'), map_option);
 
     window.map = map
-    //
 
     mydom['submit'].addEventListener('click', function (event) {
         event.preventDefault();
         var cardId = mydom['card-id'].value;
-        // ajax_get('user/' + cardId, function (xhttp) {
-        // console.log(xhttp.responseText); Create a <script> tag and set the USGS URL
-        // as the source.
-        var script = document.createElement('script');
-        // This example uses a local copy of the GeoJSON stored at
-        // http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp
-        script.text = 'for(var counter=0;counter<sample.length;counter++){renderSingleJson(sample[count' +
-                'er], counter+1)}';
-        document
-            .getElementsByTagName('head')[0]
-            .appendChild(script);
+
+        var httpRequest;
+        // Old compatibility code, no longer needed.
+        if (window.XMLHttpRequest) { // Mozilla, Safari, IE7+ ...
+            httpRequest = new XMLHttpRequest();
+        } else if (window.ActiveXObject) { // IE 6 and older
+            httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        console.log(cardId, httpRequest);
+
+        httpRequest.onreadystatechange = dealResponse;
+
+        httpRequest.open('GET', 'cardid/' + cardId.toString());
+        httpRequest.send();
+
+        function dealResponse() {
+            // process the server response
+            if (httpRequest.readyState === XMLHttpRequest.DONE) {
+                // everything is good, the response is received
+                if (httpRequest.status === 200) {
+                    // perfect!
+                    var script = document.createElement('script');
+                    window.response_routes_json = JSON.parse(httpRequest.responseText);
+                    script.text = 'for(var counter=0;counter<response_routes_json.length;counter++){renderSingleJso' +
+                            'n(response_routes_json[counter], counter+1)}';
+                    document
+                        .getElementsByTagName('head')[0]
+                        .appendChild(script);
+                } else {
+                    alert('Server Response With Status Code: ' + httpRequest.status.toString());
+                }
+            }
+        }
+
     });
     // });
 }
@@ -81,25 +91,21 @@ function initMap() {
 
 function renderSingleJson(ajson, counter) {
 
+    //random return a hex color
     function randomPickColor() {
-        var hexColor = [
-            "#ffc0cb",
-            "#900090",
-            "#051152",
-            "#ad5a7a",
-            "#f9c780",
-            "#5a7aad",
-            "#403f51",
-            "#e3780a",
-            "#00ad06",
-            "#461499",
-            "#418a14",
-            "#794044",
-            "#c8ebd0"
-        ];
-        return hexColor[Math.floor(Math.random() * hexColor.length)];
+        //specify that no hex value can be greater than 7
+        function generate_one_hex_value() {
+            var shallowBound = 9;
+            return Math.floor(Math.random() * shallowBound).toString()
+        }
+        var cur_color = "";
+        for (var i = 0; i < 6; i++) {
+            cur_color += generate_one_hex_value();
+        }
+        return cur_color;
     }
 
+    //draw polyline
     function drawLineByEncoded(encoded, color) {
         var decodedPath = google
             .maps
@@ -110,6 +116,14 @@ function renderSingleJson(ajson, counter) {
             .maps
             .Polyline({path: decodedPath, geodesic: true, strokeColor: color, strokeOpacity: 1.0, strokeWeight: 3});
         apolyline.setMap(map);
+    }
+
+    function isIn(obj, array) {
+        for (var i = 0; i < array.length; i++) {
+            if (array[i] === obj) 
+                return true;
+            }
+        return false;
     }
 
     // add marker to map
@@ -127,67 +141,32 @@ function renderSingleJson(ajson, counter) {
         marker.addListener('click', function () {
             infowindow.open(map, marker);
         });
+    }
+    ajson = JSON.parse(ajson);
+    var start_address = ajson.departure_stop.name;
+    var start_latlon = ajson.departure_stop.location;
+    var end_address = ajson.arrival_stop.name;
+    var end_latlon = ajson.arrival_stop.location;
+    // find all bus number without duplicates
+    var cur_line;
+    var all_bus_number = [];
+    for (var i = 0; i < ajson.routes.length; i++) {
+        cur_line = ajson.routes[i];
+        all_bus_number.push(cur_line.name);
+        drawLineByEncoded(cur_line.polyline.points, randomPickColor());
+    }
+    var final_bus_number = [];
+    for (var i = 0; i < all_bus_number.length; i++) {
+        if (!isIn(all_bus_number[i], final_bus_number)) {
+            final_bus_number.push(all_bus_number[i]);
+        }
+    }
 
-    }
+    var start_label = '<div>' + start_address + '</div><div>' + final_bus_number.join('|') + '</div><div>Latitude: ' + start_latlon.lat + ', Longitude: ' + start_latlon.lng + '</div>';
+    var end_label = '<div>' + end_address + '</div><div>' + final_bus_number.join('|') + '</div><div>Latitude: ' + end_latlon.lat + ', Longitude: ' + end_latlon.lng + '</div>';
+    addMarker(start_label, "", start_latlon.lat, start_latlon.lng);
+    addMarker(end_label, "", end_latlon.lat, end_latlon.lng);
 
-    var routes = ajson.routes;
-    var origin_start,
-        origin_end;
-    var bus_number = [];
-    var start_latlon,
-        end_latlon;
-    var start_address,
-        end_address;
-    var target_line;
-    //delete routes with two transit in legs
-    for (var i = 0; i < routes.length; i++) {
-        var cur_route = routes[i];
-        var cur_legs = cur_route.legs;
-        var transit_number = 0;
-        var final_legs;
-        var final_steps;
-        for (var j = 0; j < cur_legs.length; j++) {
-            var cur_steps = cur_legs[j].steps;
-            for (var m = 0; m < cur_steps.length; m++) {
-                if (cur_steps[m]["travel_mode"] == "TRANSIT") {
-                    transit_number += 1;
-                    final_legs = cur_legs[j];
-                    final_steps = cur_steps[m];
-                }
-            }
-        }
-        if (transit_number == 1) {
-            final_legs.steps = final_steps;
-            routes[i].legs = final_legs;
-        } else {
-            routes[i] = undefined;
-        }
-    }
-    // console.log(JSON.stringify(routes, null, 2)); find out correct routes,filter
-    // out routes with legs that are not same with the first one
-    for (var i = 0; i < routes.length; i++) {
-        cur_route = routes[i];
-        cur_steps = cur_route.legs.steps;
-        if (i == 0) {
-            start_address = cur_route.legs['start_address'];
-            end_address = cur_route.legs['end_address'];
-            start_latlon = cur_steps['start_location'];
-            end_latlon = cur_steps['end_location'];
-            bus_number.push(cur_steps['transit_details']['line']['short_name']);
-            target_line = cur_steps.polyline.points;
-        } else {
-            if (cur_route.legs['start_address'] == start_address && cur_route.legs['end_address'] == end_address) {
-                bus_number.push(cur_steps['transit_details']['line']['short_name']);
-            }
-        }
-    }
-    drawLineByEncoded(target_line, randomPickColor());
-    console.log(bus_number);
-    for (var i = 0; i < bus_number.length; i++) {}
-    var start_label = '<div>' + start_address + '</div><div>' + bus_number.join('|') + '</div><div>Latitude: ' + start_latlon.lat + ', Longitude: ' + start_latlon.lng + '</div>';
-    var end_label = '<div>' + end_address + '</div><div>' + bus_number.join('|') + '</div><div>Latitude: ' + end_latlon.lat + ', Longitude: ' + end_latlon.lng + '</div>';
-    addMarker(start_label, counter.toString() + 'S', start_latlon.lat, start_latlon.lng);
-    addMarker(end_label, counter.toString() + 'E', end_latlon.lat, end_latlon.lng);
 }
 
 startRun();
