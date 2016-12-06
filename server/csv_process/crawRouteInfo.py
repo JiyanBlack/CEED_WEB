@@ -128,8 +128,6 @@ if __name__ == "__main__":
                     key = next(keys)
                 # update result and status
                 result, status = get_json(on, off, key)
-            with open('./1.json', 'w') as f:
-                json.dump(result, f, indent=2)
             if status == "OK":
                 status, processed_result = process_json(result)
             df.ix[index, 'STATUS'] = status
