@@ -18,18 +18,18 @@ def get_route_from_onoff(on, off):
     return cur_result
 
 
-@app.route('/', methods=['GET'])
+@app.route('/ceed/', methods=['GET'])
 def root():
     return send_from_directory('web/static', 'index.html')
 
 
-@app.route('/<path:path>', methods=['GET'])
+@app.route('/ceed/<path:path>/', methods=['GET'])
 def serve_static(path):
     # send_static_file will guess the correct MIME type
     return send_from_directory('web/static/', path)
 
 
-@app.route('/cardid/<int:id>/', methods=['GET'])
+@app.route('/ceed/cardid/<int:id>/', methods=['GET'])
 def get_user_json(id):
     user_routes = []
     user_rows = users[users['CardId'] == id]
